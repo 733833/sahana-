@@ -1,0 +1,32 @@
+import random
+options = ("rock", "paper", "scissors")
+player_wins = 0
+computer_wins = 0
+def play_round():
+    global player_wins
+    global computer_wins
+    player = input("Enter your choice (rock, paper, scissors): ")
+    computer = random.choice(options)
+    print(f"Player: {player}")
+    print(f"Computer: {computer}")
+    if player == computer:
+        print("It's a tie!")
+    elif player == "rock" and computer == "scissors":
+        print("You win")
+    elif player == "paper" and computer == "rock":
+        print("You win")
+    elif player == "scissors" and computer == "paper":
+        print("You win")
+    else:
+        print("You lose")
+def play_game():
+    for _ in range(6):
+        play_round()
+    if player_wins > computer_wins:
+        print("You won!")
+    elif player_wins < computer_wins:
+        print("Computer won!")
+    else:
+        print("It's a tie!")
+if __name__ == "__main__":
+    play_game()
